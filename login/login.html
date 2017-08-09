@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style/public.css"/>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+		<style type="text/css">
+			 @font-face {
+				  font-family: 'iconfont';  /* project id 372023 */
+				  src: url('//at.alicdn.com/t/font_pik9guy3e3pojemi.eot');
+				  src: url('//at.alicdn.com/t/font_pik9guy3e3pojemi.eot?#iefix') format('embedded-opentype'),
+				  url('//at.alicdn.com/t/font_pik9guy3e3pojemi.woff') format('woff'),
+				  url('//at.alicdn.com/t/font_pik9guy3e3pojemi.ttf') format('truetype'),
+				  url('//at.alicdn.com/t/font_pik9guy3e3pojemi.svg#iconfont') format('svg');
+				}
+			.iconfont{
+			    font-family:"iconfont" !important;
+			    font-size:22px;
+			    color:#cfcfcf;
+			    }
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="margin">
+				<a class="logo" href=""><img src="images/b1.png"></a>
+				<div class="introduce"><img src="images/b2.png"></div>
+				<div class="login">
+				欢迎来到酒仙网<a href="../register/register.html">请登录</a>
+				<div class="sever">
+					<p class="help">帮助中心<img src="images/b3.png"></p>
+					<ul>
+						<li><a href="http://help.jiuxian.com/view-3-117.htm#delivery_01">配送说明</a></li>
+						<li><a href="http://help.jiuxian.com/view-4-120.htm#pay_1">支付方式</a></li>
+						<li><a href="http://help.jiuxian.com/view-5-123.htm#bz_1">售后服务</a></li>
+						<li><a href="https://login.jiuxian.com/login.htm?from=http://member.jiuxian.com/company.htm">企业客户</a></li>
+					</ul>
+				</div>
+				</div>
+			</div>
+		</header>
+		<div id="main">
+			<div class="margin clear">
+				<div class="center">
+					<div class="person active">个人用户注册</div>
+					<div class="firm">企业用户注册</div>
+					<form class="cmxform" id="commentForm" method="get" action="">
+						<fieldset>
+						  <div class="biao"><span>手机号码</span><div class="ibox"><i class="iconfont">&#xe636;</i><input name="phone" type="text"></div></div>
+						 
+						  <div class="biao"><span>设置密码</span><div class="ibox"><i class="iconfont">&#xe600;</i><input name="password" id="password" type="password"></div></div>
+						 <div class="biao"><span>确认密码</span><div class="ibox"><i class="iconfont">&#xe600;</i><input name="queren" type="password"></div></div>
+						  <div class="biao"><span>验证码</span><div class="ibox"><i class="iconfont">&#xe7e6;</i><input name="yanzhen" type="text"></div></div>
+						  <div class="biao"><span>效验码</span><div class="ibox"><i class="iconfont">&#xe61b;</i><input name="xiaoyan" type="text"></div></div>
+						  <div class="xieyi clear"><input type="checkbox" name="checkbox" id="ck">我已阅读同意<a href="http://help.jiuxian.com/view-1-112.htm">《酒仙网用户注册协议》</a></div>
+						  
+						  <input type="submit" value="立即注册" class="btn">
+						  </fieldset>
+					</form>
+				</input>
+			</div>
+		</div>
+		<footer class="clear"><p>©  酒仙网  2011 jiuxian.com All  Rights Reserved  京ICP证110141号  京公网安备1101050188221</p>
+<p>购买前请确认达到法定饮酒年龄！酒仙网不销售任何含酒精产品给18岁以下人士！<p></footer>
+</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/messages_zh.min.js"></script>
+	<script type="text/javascript">
+		$.validator.setDefaults({
+		    submitHandler: function() {
+		      alert("提交事件!");
+		    },
+		    rules:{
+		    	phone:{
+		    		required:true,
+		    		digits:true,
+		    		maxlength:11,
+		    		minlength:11
+		    	},
+		    	password:{
+		    		required:true,
+		    		minlength:5,
+		    	},
+		    	queren:{
+		    		required:true,
+		    		equalTo:"#password"
+		    	},
+		    	checkbox:"required"
+		    },
+		    messages:{
+		    	phone:{
+		    	required:"请输入11位电话号码",
+		    	digits:"请输入数字",
+		    	minlength:"只能输入11位号码"
+		    	},
+		    	password:{
+		    		required:"请输入密码",
+		    		minlength:"密码长度最少为5位",
+		    	},
+		    	queren:{
+		    		required:"请确认密码",
+		    		equalTo:"密码必须前后一致"
+		    	},
+		    	checkbox:"",
+		    }
+		});
+		$(function() {
+		$("#commentForm").validate();
+		    
+		});
+	</script>
+</html>
